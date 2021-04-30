@@ -13,6 +13,12 @@ public class Person {
 
 	private int cash;
 
+	public Person(String id, String personName, int cash) {
+		this.id=id;
+		this.personName=personName;
+		this.cash=cash;
+	}
+
 	public String getId() {
 		return id;
 	}

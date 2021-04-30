@@ -20,9 +20,9 @@ public class MonoPolyService {
 	Random rand = new Random();
 	int upperbound = 3;
 
-	public void dieDice(String personId) {
+	public String dieDice(String personId) {
 		int random = rand.nextInt(upperbound);
-		System.out.println(random);
+		String message="Keep Going :P";
 		Place place = placeRepo.findById(random).get();
 		Person person = personRepo.findById(personId).get();
 		int cash = person.getCash();
@@ -35,11 +35,19 @@ public class MonoPolyService {
 			cash = cash - place.getRent();
 			person.setCash(cash);
 		}
-		if(cash<0) {
-			System.out.println("Sorry Game Over");
-		}
 		personRepo.save(person);
-
-	}
+		if(cash<0) {
+			message="Sorry Game Over";
+			return message;
+		}
+			return message;
+		
 
 }
+
+	public void createUser(Person p) 
+	{
+		personRepo.save(p);
+		
+	}
+	}
