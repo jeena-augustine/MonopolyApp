@@ -13,30 +13,27 @@ import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.client.RestTemplate;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 class MonopolyAppApplicationTests {
 
 	@Autowired()
 	RestTemplate restTemplate;
-	
-	 @LocalServerPort
-	 int randomServerPort;
-	     
-	
+
 	private String getUrl() {
-		return "http://localhost:8080"+randomServerPort+"/roll-die/p2";
+		return "http://localhost:8080/monopolyApp/api/v1/roll-die/p1";
 	}
-	
+
 	@Test
 	public void contextLoads() {
 	}
 
 	@Test
 	public void testRollDie() throws URISyntaxException {
-		URI uri=new URI(getUrl());
+		URI uri = new URI(getUrl());
 		ResponseEntity<String> message = restTemplate.getForEntity(uri, String.class);
-		 Assert.assertEquals(200, message.getStatusCodeValue());
+		Assert.assertEquals(200, message.getStatusCodeValue());
 	}
 
 }

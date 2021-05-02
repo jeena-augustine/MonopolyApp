@@ -40,7 +40,7 @@ public class GameController {
 	//rolling a dice
 	@GetMapping(value = "/roll-die/{id}")
 	public ResponseEntity<String> rollDie(@PathVariable("id") String personId) {
-		String message = service.dieDice(personId);
+		String message = service.rollDice(personId);
 		return ResponseEntity.ok(message);
 	}
 

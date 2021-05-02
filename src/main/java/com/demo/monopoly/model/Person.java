@@ -19,6 +19,11 @@ public class Person {
 		this.cash=cash;
 	}
 
+	public Person() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	public String getId() {
 		return id;
 	}

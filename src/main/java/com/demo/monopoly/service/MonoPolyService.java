@@ -18,9 +18,9 @@ public class MonoPolyService {
 	PlaceRepository placeRepo;
 
 	Random rand = new Random();
-	int upperbound = 3;
+	int upperbound = 4;
 
-	public String dieDice(String personId) {
+	public String rollDice(String personId) {
 		int random = rand.nextInt(upperbound);
 		String message="Keep Going :P";
 		Place place = placeRepo.findById(random).get();
@@ -31,7 +31,8 @@ public class MonoPolyService {
 			cash = cash - place.getBuy();
 			person.setCash(cash);
 			place.setIsClaimed(1);
-		} else if (place.getIsClaimed() == 1) {
+		} else if (place.getIsClaimed() == 1) 
+		{
 			cash = cash - place.getRent();
 			person.setCash(cash);
 		}
