@@ -1,4 +1,4 @@
-package com.demo.monopoly;
+/*package com.demo.monopoly;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -36,4 +36,4 @@ class MonopolyAppApplicationTests {
 		Assert.assertEquals(200, message.getStatusCodeValue());
 	}
 
-}
+}*/
